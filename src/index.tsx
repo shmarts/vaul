@@ -387,9 +387,9 @@ export function Root({
       }
 
       // Disallow close dragging beyond the smallest snap point.
-      if (noCloseSnapPointsPreCondition && percentageDragged >= 1) {
-        return;
-      }
+      // if (noCloseSnapPointsPreCondition && percentageDragged >= 1) {
+      //   return;
+      // }
 
       if (!isAllowedToDrag.current && !shouldDrag(event.target, isDraggingInDirection)) return;
       drawerRef.current.classList.add(DRAG_CLASS);
@@ -806,9 +806,9 @@ export const Overlay = React.forwardRef<HTMLDivElement, React.ComponentPropsWith
     const hasSnapPoints = snapPoints && snapPoints.length > 0;
 
     // Overlay is the component that is locking scroll, removing it will unlock the scroll without having to dig into Radix's Dialog library
-    if (!modal) {
-      return null;
-    }
+    // if (!modal) {
+    //   return null;
+    // }
 
     const onMouseUp = React.useCallback((event: React.PointerEvent<HTMLDivElement>) => onRelease(event), [onRelease]);
 
